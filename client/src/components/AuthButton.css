@@ -1,0 +1,89 @@
+.auth-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 20px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--ok);
+}
+
+.user-name {
+  color: var(--fg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.auth-btn {
+  background: var(--ok);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auth-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.auth-btn:disabled {
+  background: rgba(100, 100, 100, 0.5);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, var(--ok), #8b5cf6);
+}
+
+.logout-btn {
+  background: rgba(239, 68, 68, 0.8);
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+.logout-btn:hover {
+  background: rgba(239, 68, 68, 1);
+}
+
+.loading {
+  background: rgba(100, 100, 100, 0.5);
+  cursor: wait;
+}
+
+@media (max-width: 640px) {
+  .auth-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .user-name {
+    max-width: 120px;
+  }
+}

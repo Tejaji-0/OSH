@@ -1,0 +1,436 @@
+.mindfulness-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.mindfulness-container {
+  max-width: 700px;
+  width: 100%;
+  background: rgba(17, 24, 39, 0.98);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.mindfulness-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mindfulness-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--fg);
+}
+
+.close-mindfulness {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--fg);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+}
+
+.close-mindfulness:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.affirmation-card {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  border: 1px solid var(--ok);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.affirmation-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--fg);
+}
+
+.affirmation-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--fg);
+  font-style: italic;
+  margin: 1.5rem 0;
+  font-weight: 500;
+}
+
+.new-affirmation-btn {
+  background: var(--ok);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.new-affirmation-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.exercises-grid {
+  margin-bottom: 2rem;
+}
+
+.exercises-grid h3 {
+  margin: 0 0 1rem 0;
+  color: var(--fg);
+}
+
+.exercise-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s;
+}
+
+.exercise-card:hover {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: var(--ok);
+  transform: translateX(4px);
+}
+
+.exercise-icon {
+  font-size: 1.5rem;
+  min-width: 60px;
+}
+
+.exercise-details {
+  flex: 1;
+}
+
+.exercise-details h4 {
+  margin: 0 0 0.25rem 0;
+  color: var(--fg);
+  font-size: 1rem;
+}
+
+.exercise-details p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.duration {
+  font-size: 0.75rem;
+  color: var(--ok);
+  font-weight: 600;
+}
+
+.start-exercise-btn {
+  background: var(--ok);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.start-exercise-btn:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+.quick-tips {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.quick-tips h3 {
+  margin: 0 0 1rem 0;
+  color: var(--fg);
+}
+
+.quick-tips ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--fg);
+}
+
+.quick-tips li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Breathing Session Styles */
+.breathing-session {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.breathing-session h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+}
+
+.session-instructions {
+  color: var(--ok);
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  min-height: 2rem;
+  animation: instructionPulse 0.5s ease-in-out;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+@keyframes instructionPulse {
+  0% { 
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.breath-visualizer {
+  margin: 3rem 0;
+}
+
+.breath-orb {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, 
+    rgba(59, 130, 246, 0.8) 0%, 
+    rgba(59, 130, 246, 0.5) 30%, 
+    rgba(59, 130, 246, 0.2) 60%,
+    rgba(59, 130, 246, 0.1) 100%);
+  border: 4px solid var(--ok);
+  --cycle-duration: 6s;
+  animation: breatheOrb var(--cycle-duration, 6s) cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  box-shadow: 
+    0 0 30px rgba(59, 130, 246, 0.4),
+    0 0 60px rgba(59, 130, 246, 0.3),
+    inset 0 0 30px rgba(59, 130, 246, 0.2);
+  position: relative;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.breath-orb::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+  animation: orbInner var(--cycle-duration, 6s) cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.breath-orb::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  animation: orbOuter var(--cycle-duration, 6s) cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes breatheOrb {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.7;
+    box-shadow: 
+      0 0 30px rgba(59, 130, 246, 0.4),
+      0 0 60px rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.6);
+  }
+  15% {
+    opacity: 0.8;
+  }
+  50% { 
+    transform: scale(1.6); 
+    opacity: 1;
+    box-shadow: 
+      0 0 50px rgba(59, 130, 246, 0.7),
+      0 0 100px rgba(59, 130, 246, 0.5),
+      0 0 150px rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 1);
+  }
+  85% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes orbInner {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+@keyframes orbOuter {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Phase-specific colors */
+.breath-phase-inhale {
+  border-color: rgba(59, 130, 246, 1) !important;
+  background: radial-gradient(circle at 35% 35%, 
+    rgba(59, 130, 246, 0.9) 0%, 
+    rgba(59, 130, 246, 0.6) 30%, 
+    rgba(59, 130, 246, 0.3) 60%,
+    rgba(59, 130, 246, 0.1) 100%) !important;
+}
+
+.breath-phase-hold-in {
+  border-color: rgba(139, 92, 246, 1) !important;
+  background: radial-gradient(circle at 35% 35%, 
+    rgba(139, 92, 246, 0.8) 0%, 
+    rgba(139, 92, 246, 0.5) 30%, 
+    rgba(139, 92, 246, 0.2) 60%,
+    rgba(139, 92, 246, 0.1) 100%) !important;
+}
+
+.breath-phase-exhale {
+  border-color: rgba(34, 197, 94, 1) !important;
+  background: radial-gradient(circle at 35% 35%, 
+    rgba(34, 197, 94, 0.8) 0%, 
+    rgba(34, 197, 94, 0.5) 30%, 
+    rgba(34, 197, 94, 0.2) 60%,
+    rgba(34, 197, 94, 0.1) 100%) !important;
+}
+
+.breath-phase-hold-out {
+  border-color: rgba(251, 191, 36, 1) !important;
+  background: radial-gradient(circle at 35% 35%, 
+    rgba(251, 191, 36, 0.8) 0%, 
+    rgba(251, 191, 36, 0.5) 30%, 
+    rgba(251, 191, 36, 0.2) 60%,
+    rgba(251, 191, 36, 0.1) 100%) !important;
+}
+
+.breath-count {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--ok);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+  animation: countFade 1s ease-in-out infinite alternate;
+}
+
+.cycle-info {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+@keyframes countFade {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+
+.stop-btn {
+  background: rgba(239, 68, 68, 0.8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.2s;
+}
+
+.stop-btn:hover {
+  background: rgba(239, 68, 68, 1);
+  transform: translateY(-2px);
+}
+
+.session-progress {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+}
+
+.progress-text {
+  color: var(--ok);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .mindfulness-container {
+    padding: 1.5rem;
+  }
+  
+  .exercise-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .breath-orb {
+    width: 120px;
+    height: 120px;
+  }
+}
